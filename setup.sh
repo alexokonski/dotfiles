@@ -51,6 +51,3 @@ done
 for file in $FILES; do
     ln -s ${DOTFILEDIR}/${file} ~/${file}
 done
-
-# also do the bin
-ln -s ${DOTFILEDIR}/bin ~/bin

@@ -10,7 +10,7 @@ syntax enable
 filetype plugin indent on
 
 " 256 color version of rdark
-colorscheme rdark-terminal
+" colorscheme rdark
 
 " basic options
 set nowrap " don't wrap text
@@ -29,6 +29,8 @@ set wildmode=list:longest " list possible entries and autocomplete longest subst
 set backspace=indent,eol,start " allow backspace to cut through autoindent, ends of lines, and the start of insert mode
 set visualbell " flash the screen instead of beeping
 set autoindent " continue indentation if not told otherwise
+set cc=80
+set number
 
 " default tabulation
 set expandtab
@@ -44,7 +46,7 @@ set wildignore+=*build/*,*data/*,*git/*,*.pyc,*.png,*.gif,*.so,*.o,*~,
 let python_slow_sync=1
 
 " ack
-let g:ackprg="ack -H --nocolor --nogroup --column --ignore-dir=build"
+let g:ackprg="ack-grep -H --nocolor --nogroup --column --ignore-dir=build"
 
 " ctrl-p
 let g:ctrlp_map = '<leader>t'
@@ -90,7 +92,7 @@ augroup spladug
     au BufEnter * let &titlestring=expand("%:t")
 
     " mark trailing whitespace
-    au BufWinEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+    " au BufWinEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 
     " 'make' specific stuff
     au FileType make setlocal softtabstop=8 tabstop=8 shiftwidth=8
