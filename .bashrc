@@ -31,6 +31,11 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
 fi
 
+alias m='make'
+alias t='tmux attach'
+alias gd='git diff'
+alias gs='git status'
+
 # advanced tab-completion for various commands in bash
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion

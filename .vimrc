@@ -30,7 +30,7 @@ set backspace=indent,eol,start " allow backspace to cut through autoindent, ends
 set visualbell " flash the screen instead of beeping
 set autoindent " continue indentation if not told otherwise
 set cc=80
-set number
+set relativenumber
 
 " default tabulation
 set expandtab
@@ -101,6 +101,8 @@ augroup spladug
     " python specific stuff
     au FileType python setlocal colorcolumn=80  " helps with pep-8
     au FileType python setlocal list listchars=tab:>·,trail:· " make tabs and trailing whitespace visible
+
+    au FileType c setlocal list listchars=tab:>_,trail:_
 
     " html stuff
     au FileType html setlocal softtabstop=2 tabstop=2 shiftwidth=2
