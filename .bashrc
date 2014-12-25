@@ -4,11 +4,6 @@
 # a place to put my own binaries!
 export PATH=~/bin:$PATH
 
-# use vi editing mode instead of default emacs
-set -o vi
-# but don't lose C-l as the "clear the screen" key
-bind -m vi-insert "\C-l":clear-screen
-
 # append to the history file, don't overwrite it
 shopt -s histappend
 
@@ -20,6 +15,7 @@ export TERM='xterm-256color' # pretty pretty colors
 export HISTCONTROL=ignoreboth # don't save commands that start with space characters and don't save dupes
 export HISTSIZE=1000 # keep the history file from growing gigantic
 export HISTFILESIZE=2000
+export EDITOR=vim
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -34,7 +30,10 @@ fi
 alias m='make'
 alias t='tmux attach'
 alias gd='git diff'
+alias gd^='git diff HEAD^'
 alias gs='git status'
+alias untargz='tar -xzf'
+alias f='find . | grep '
 
 # advanced tab-completion for various commands in bash
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
