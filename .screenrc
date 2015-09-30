@@ -1,0 +1,15 @@
+term xterm-256color
+
+defutf8 on
+
+hardstatus alwayslastline
+hardstatus string '%{= kg}[%{G}%H%{g}][%=%{= kw}%?%-Lw%?%{r}(%{W}%n*%f %t%?(%u)%?%{r})%{w}%?%+Lw%?%?%=%{g}][%{B}%Y-%m-%d %{W}%c%{g}]'
+
+shelltitle '$ |'
+autodetach on
+
+termcapinfo xterm-256color 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+termcapinfo rxvt-256color 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
+defscrollback 50000
+# Default screens

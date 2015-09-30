@@ -29,8 +29,11 @@ set wildmode=list:longest " list possible entries and autocomplete longest subst
 set backspace=indent,eol,start " allow backspace to cut through autoindent, ends of lines, and the start of insert mode
 set visualbell " flash the screen instead of beeping
 set autoindent " continue indentation if not told otherwise
-set cc=80
 set relativenumber
+
+" show tabs and trailing spaces
+set listchars=tab:>-,trail:~
+set list
 
 " default tabulation
 set expandtab
@@ -81,11 +84,12 @@ vmap < <gv
 
 " ,a is the "ack" command
 map <leader>a :Ack 
+vnorem // y/<c-r>"<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " autocommands
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup spladug
+augroup okonskia 
     au!
 
     " make the window title something useful

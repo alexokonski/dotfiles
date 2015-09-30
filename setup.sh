@@ -9,21 +9,6 @@ else
     READLINK=readlink
 fi
 
-# install extra packages if on debian/ubuntu and desired
-if which whiptail > /dev/null; then
-    if whiptail --yesno "install additional packages for vim?" 10 60 \
-                --yes-button "install" \
-                --no-button "skip"; then
-        if dpkg -l xorg > /dev/null; then
-            VIM="vim-gnome ttf-bitstream-vera"
-        else
-            VIM="vim-nox"
-        fi
-
-        sudo apt-get install $VIM pyflakes
-    fi
-fi
-
 # figure out where we are
 WORKINGDIR=$(pwd)
 DOTFILEDIR=$(dirname $($READLINK -f $0))
